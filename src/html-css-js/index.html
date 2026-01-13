@@ -28,31 +28,7 @@
     <script src="./_framework/blazor.web.js" autostart="false"></script>
     <!-- カスタムのJavaScriptコード -->
     <script src="main.js"></script>
-
-    <script type="text/javascript">
-        // Wasmランタイムがロードされたらmain.jsを初期化
-        (async function () {
-            try {
-                await Blazor.start(); // WASMランタイム起動
-
-                console.log("Wasmランタイムが初期化されました。");
-                document.getElementById('output').innerText += "Wasmランタイムが初期化されました。\n";
-
-                // ボタンのクリックイベントでC#メソッドを呼ぶ
-                document.getElementById('addBtn').addEventListener('click', async () => {
-                    const a = parseInt(document.getElementById('numA').value);
-                    const b = parseInt(document.getElementById('numB').value);
-
-                    // DotNet.invokeMethodAsync を使って C# の静的メソッドを呼ぶ
-                    const result = await DotNet.invokeMethodAsync('WasmLogic', 'Add', a, b);
-                    document.getElementById('result').innerText = result;
-                });
-
-            } catch (error) {
-                console.error("Wasmランタイムの初期化中にエラーが発生しました:", error);
-                document.getElementById('output').innerText += "Wasmランタイムの初期化中にエラーが発生しました\n";
-            }
-        })();
-    </script>
+    <!-- Wasmランタイムの初期化とアプリケーションの起動 -->
+    <script src="app-init.js"></script>
 </body>
 </html>
