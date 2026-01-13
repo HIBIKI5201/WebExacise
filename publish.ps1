@@ -11,6 +11,19 @@ dotnet publish src/csharp/BlazorSample/BlazorSample.csproj -c Release -o docs --
 if ($LASTEXITCODE -eq 0) {
     Write-Host "Blazorアプリの公開が成功しました！" -ForegroundColor Green
     Write-Host "docsフォルダにファイルが出力されました。" -ForegroundColor Green
+
+    # wwwrootフォルダの中身をdocs直下に移動
+    Write-Host "docs/wwwroot の内容を docs/ 直下に移動します..." -ForegroundColor Yellow
+    # Get-ChildItem -Path "docs/wwwroot" -Force はディレクトリも取得してしまうため、ファイルのみを対象とします
+    Get-ChildItem -Path "docs/wwwroot" -File -Force | Move-Item -Destination "docs/" -Force
+    # docs/wwwroot 下のディレクトリも移動対象に含める場合（例：_frameworkなど）
+    Get-ChildItem -Path "docs/wwwroot" -Directory -Force | Move-Item -Destination "docs/" -Force
+
+    # 空になったwwwrootフォルダを削除
+    Write-Host "空になった docs/wwwroot フォルダを削除します..." -ForegroundColor Yellow
+    Remove-Item -Path "docs/wwwroot" -Recurse -Force
+
+    Write-Host "GitHub Pages公開用のファイル配置が完了しました！" -ForegroundColor Green
 } else {
     Write-Host "Blazorアプリの公開に失敗しました。" -ForegroundColor Red
     Write-Host "エラーコード: $LASTEXITCODE" -ForegroundColor Red
