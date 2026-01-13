@@ -60,6 +60,5 @@ if ($LASTEXITCODE -eq 0) {
 } else {
     Write-Host "WasmLogicアプリの公開に失敗しました。" -ForegroundColor Red
     Write-Host "エラーコード: $LASTEXITCODE" -ForegroundColor Red
+    Read-Host "続行するには何かキーを押してください..."
 }
-
-Read-Host "続行するには何かキーを押してください..."
