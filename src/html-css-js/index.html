@@ -1,1 +1,61 @@
-<html><body>Static Web Page</body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WasmLogic Demo</title>
+    <!-- ここに必要であればCSSなどを追加 -->
+    <style>
+        body { font-family: sans-serif; margin: 20px; }
+        #output { border: 1px solid #ccc; padding: 10px; min-height: 50px; margin-top: 10px; }
+        input[type="number"] { width: 80px; text-align: center; }
+        button { padding: 8px 15px; cursor: pointer; }
+        #result { font-weight: bold; color: blue; }
+    </style>
+</head>
+<body>
+    <h1>WasmLogic Demo</h1>
+    <p>
+        <input type="number" id="numA" value="10" /> +
+        <input type="number" id="numB" value="20" />
+        <button id="addBtn">C#のAddを呼び出す</button>
+    </p>
+    <p>結果: <span id="result"></span></p>
+    <div id="output"></div>
+
+    <!-- Wasmランタイムの初期化スクリプト -->
+    <!-- _framework/dotnet.js は、ビルド後にWasmLogicプロジェクトの成果物としてdocs/に配置される -->
+    <script src="./_framework/dotnet.js" autostart="false"></script>
+    <!-- カスタムのJavaScriptコード -->
+    <script src="main.js"></script>
+
+    <script type="text/javascript">
+        // Wasmランタイムがロードされたらmain.jsを初期化
+        (async function() {
+            try {
+                // dotnet.jsのautostart="false"設定により、手動でWasmランタイムをロード
+                const { getAssemblyExports, getConfig } = await dotnet.create();
+                const config = getConfig();
+                const exports = await getAssemblyExports(config.mainAssemblyName);
+
+                // C#からJavaScriptの関数を呼び出せるように公開することも可能（今回は使用しないが参考として）
+                // window.CallMeFromCsharp = (message) => {
+                //     console.log("Called from C#:", message);
+                // };
+
+                // main.jsの初期化関数を呼び出す（もし定義されていれば）
+                if (typeof initializeMainJs === 'function') {
+                    initializeMainJs(exports);
+                }
+                
+                console.log("Wasmランタイムが初期化されました。");
+                document.getElementById('output').innerText += "Wasmランタイムが初期化されました。\n";
+
+            } catch (error) {
+                console.error("Wasmランタイムの初期化中にエラーが発生しました:", error);
+                document.getElementById('output').innerText += "Wasmランタイムの初期化中にエラーが発生しました: " + error.message + "\n";
+            }
+        })();
+    </script>
+</body>
+</html>

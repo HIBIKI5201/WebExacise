@@ -1,4 +1,0 @@
-C:\Users\takut\OneDrive\デスクトップ\WebExacise\docs\wwwroot\index.html
-C:\Users\takut\OneDrive\デスクトップ\WebExacise\docs\BlazorSample.runtimeconfig.json
-C:\Users\takut\OneDrive\デスクトップ\WebExacise\docs\dotnet.js
-C:\Users\takut\OneDrive\デスクトップ\WebExacise\docs\web.config
