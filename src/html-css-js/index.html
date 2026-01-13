@@ -51,11 +51,16 @@
                 console.log("Wasmランタイムが初期化されました。");
                 document.getElementById('output').innerText += "Wasmランタイムが初期化されました。\n";
 
-            } catch (error) {
-                console.error("Wasmランタイムの初期化中にエラーが発生しました:", error);
-                document.getElementById('output').innerText += "Wasmランタイムの初期化中にエラーが発生しました: " + error.message + "\n";
-            }
-        })();
+                    } catch (error) {
+                        console.error("Wasmランタイムの初期化中にエラーが発生しました (詳細):", error);
+                        let errorMessage = "Wasmランタイムの初期化中にエラーが発生しました (詳細情報):\n";
+                        errorMessage += "========================================\n";
+                        errorMessage += "エラーメッセージ: " + (error.message || "N/A") + "\n\n";
+                        errorMessage += "スタックトレース:\n" + (error.stack || "N/A") + "\n\n";
+                        errorMessage += "エラーオブジェクト (JSON):\n" + JSON.stringify(error, null, 2) + "\n";
+                        errorMessage += "========================================\n";
+                        document.getElementById('output').innerText += errorMessage;
+                    }        })();
     </script>
 </body>
 </html>
