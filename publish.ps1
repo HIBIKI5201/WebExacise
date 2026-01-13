@@ -20,6 +20,16 @@ if ($LASTEXITCODE -eq 0) {
     Write-Host "WasmLogicアプリの公開が成功しました！" -ForegroundColor Green
     Write-Host "docsフォルダにWebAssemblyファイルが出力されました。" -ForegroundColor Green
 
+    # dotnet publish が wwwroot を作成してしまった場合、その中身を docs 直下に移動
+    $wwwRootPath = "docs/wwwroot"
+    if (Test-Path -Path $wwwRootPath) {
+        Write-Host "$wwwRootPath の内容を docs/ に移動します..." -ForegroundColor Yellow
+        Get-ChildItem -Path $wwwRootPath | ForEach-Object {
+            Move-Item -Path $_.FullName -Destination "docs/" -Force
+        }
+        Remove-Item -Path $wwwRootPath -Recurse -Force
+    }
+
     # src/html-css-js の内容を docs フォルダにコピー
     Write-Host "静的コンテンツ (HTML/CSS/JS) を docs フォルダにコピーします..." -ForegroundColor Yellow
     Copy-Item -Path "src/html-css-js/*" -Destination "docs/" -Recurse -Force
