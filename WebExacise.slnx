@@ -1,0 +1,6 @@
+<Solution>
+  <Folder Name="/src/" />
+  <Folder Name="/src/csharp/">
+    <Project Path="src/csharp/BlazorSample/BlazorSample.csproj" />
+  </Folder>
+</Solution>
