@@ -44,6 +44,10 @@ if ($LASTEXITCODE -eq 0) {
         Remove-Item -Path "docs/web.config" -Force
     }
 
+    # Jekyllを無効にするため、.nojekyllファイルを作成
+    Write-Host "Jekyllを無効にするため、.nojekyllファイルを作成します..." -ForegroundColor Yellow
+    New-Item -Path "docs/.nojekyll" -ItemType File -Force
+
     Write-Host "GitHub Pages公開用のファイル配置が完了しました！" -ForegroundColor Green
 } else {
     Write-Host "Blazorアプリの公開に失敗しました。" -ForegroundColor Red
