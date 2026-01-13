@@ -1,6 +1,0 @@
-<Solution>
-  <Folder Name="/src/" />
-  <Folder Name="/src/csharp/">
-    <Project Path="src/csharp/WasmLogic/WasmLogic.csproj" />
-  </Folder>
-</Solution>

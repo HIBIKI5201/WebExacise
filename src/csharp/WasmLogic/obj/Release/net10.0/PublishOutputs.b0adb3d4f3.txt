@@ -1,7 +1,0 @@
-C:\Users\takut\OneDrive\デスクトップ\WebExacise\docs\WasmLogic.exe
-C:\Users\takut\OneDrive\デスクトップ\WebExacise\docs\WasmLogic.dll
-C:\Users\takut\OneDrive\デスクトップ\WebExacise\docs\WasmLogic.runtimeconfig.json
-C:\Users\takut\OneDrive\デスクトップ\WebExacise\docs\WasmLogic.pdb
-C:\Users\takut\OneDrive\デスクトップ\WebExacise\docs\Microsoft.AspNetCore.Components.WebAssembly.dll
-C:\Users\takut\OneDrive\デスクトップ\WebExacise\docs\Microsoft.JSInterop.WebAssembly.dll
-C:\Users\takut\OneDrive\デスクトップ\WebExacise\docs\WasmLogic.deps.json
