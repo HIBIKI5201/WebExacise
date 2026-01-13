@@ -1,4 +1,11 @@
 # publish.ps1
+
+# 既存のdocsフォルダを削除してクリーンな状態にする
+if (Test-Path -Path "docs") {
+    Write-Host "既存の docs フォルダを削除します..." -ForegroundColor Yellow
+    Remove-Item -Path "docs" -Recurse -Force
+}
+
 Write-Host "Blazorアプリの公開を開始します..." -ForegroundColor Cyan
 
 # dotnet publish コマンドを実行
