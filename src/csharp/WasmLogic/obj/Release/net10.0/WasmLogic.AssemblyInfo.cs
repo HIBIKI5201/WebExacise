@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WasmLogic")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e7a8c56b19d2160d6240c31d37defa601aa02867")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1cd83dbe61b79de7312496e94b7da287e18d399e")]
 [assembly: System.Reflection.AssemblyProductAttribute("WasmLogic")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WasmLogic")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
