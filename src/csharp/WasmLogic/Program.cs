@@ -1,11 +1,10 @@
-using System;
-using System.Runtime.InteropServices.JavaScript;
+using Microsoft.JSInterop;
 
 Console.WriteLine("WasmLogic C# is initializing...");
 
 public partial class Program
 {
-    [JSExport]
+    [JSInvokable("Add")]
     internal static int Add(int a, int b)
     {
         Console.WriteLine($"C# Add method called with {a} and {b}");
