@@ -19,6 +19,13 @@ if ($LASTEXITCODE -eq 0) {
     Write-Host "Blazorアプリの公開が成功しました！" -ForegroundColor Green
     Write-Host "docsフォルダにファイルが出力されました。" -ForegroundColor Green
 
+    # index.htmlのベースパスをリポジトリ名に合わせて修正
+    $repoName = "WebExacise" # ユーザーのリポジトリ名
+    $indexPath = "docs/wwwroot/index.html"
+    Write-Host "index.html の <base href> を '/$repoName/' に修正します..." -ForegroundColor Yellow
+    (Get-Content $indexPath) -replace '<base href="/" />', "<base href='/$repoName/' />" | Set-Content $indexPath
+
+
     # wwwrootフォルダの中身をdocs直下に移動
     Write-Host "docs/wwwroot の内容を docs/ 直下に移動します..." -ForegroundColor Yellow
     # Get-ChildItem -Path "docs/wwwroot" -Force はディレクトリも取得してしまうため、ファイルのみを対象とします
