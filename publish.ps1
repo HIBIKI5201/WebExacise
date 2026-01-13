@@ -25,12 +25,13 @@ if ($LASTEXITCODE -eq 0) {
     Write-Host "index.html の <base href> を '/$repoName/' に修正します..." -ForegroundColor Yellow
     (Get-Content $indexPath) -replace '<base href="/" />', "<base href='/$repoName/' />" | Set-Content $indexPath
 
+    # GitHub Pagesのルーティング設定のため、index.htmlを404.htmlとしてコピー
+    Write-Host "GitHub Pagesルーティング設定のため、index.htmlを404.htmlとしてコピーします..." -ForegroundColor Yellow
+    Copy-Item -Path "docs/wwwroot/index.html" -Destination "docs/wwwroot/404.html" -Force
 
     # wwwrootフォルダの中身をdocs直下に移動
     Write-Host "docs/wwwroot の内容を docs/ 直下に移動します..." -ForegroundColor Yellow
-    # Get-ChildItem -Path "docs/wwwroot" -Force はディレクトリも取得してしまうため、ファイルのみを対象とします
     Get-ChildItem -Path "docs/wwwroot" -File -Force | Move-Item -Destination "docs/" -Force
-    # docs/wwwroot 下のディレクトリも移動対象に含める場合（例：_frameworkなど）
     Get-ChildItem -Path "docs/wwwroot" -Directory -Force | Move-Item -Destination "docs/" -Force
 
     # 空になったwwwrootフォルダを削除
