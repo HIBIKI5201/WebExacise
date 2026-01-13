@@ -8,11 +8,11 @@ if (Test-Path -Path "docs") {
 
 Write-Host "Blazorアプリの公開を開始します..." -ForegroundColor Cyan
 
+# クリーンビルドを実行
+Write-Host "プロジェクトのクリーンアップを実行します..." -ForegroundColor Yellow
+dotnet clean src/csharp/BlazorSample/BlazorSample.csproj -c Release --nologo
+
 # dotnet publish コマンドを実行
-# src/csharp/BlazorSample/BlazorSample.csproj はBlazorプロジェクトのパス
-# -c Release はリリースビルドを行う
-# -o docs は出力先フォルダをdocsに指定
-# --nologo は dotnet のロゴ表示を抑制
 dotnet publish src/csharp/BlazorSample/BlazorSample.csproj -c Release -o docs --nologo
 
 if ($LASTEXITCODE -eq 0) {
@@ -37,6 +37,12 @@ if ($LASTEXITCODE -eq 0) {
     # 空になったwwwrootフォルダを削除
     Write-Host "空になった docs/wwwroot フォルダを削除します..." -ForegroundColor Yellow
     Remove-Item -Path "docs/wwwroot" -Recurse -Force
+    
+    # GitHub Pagesでは不要なweb.configを削除
+    Write-Host "不要な web.config ファイルを削除します..." -ForegroundColor Yellow
+    if (Test-Path -Path "docs/web.config") {
+        Remove-Item -Path "docs/web.config" -Force
+    }
 
     Write-Host "GitHub Pages公開用のファイル配置が完了しました！" -ForegroundColor Green
 } else {

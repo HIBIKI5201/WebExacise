@@ -206,6 +206,9 @@ C:\Users\takut\OneDrive\デスクトップ\WebExacise\src\csharp\BlazorSample\bi
 C:\Users\takut\OneDrive\デスクトップ\WebExacise\src\csharp\BlazorSample\bin\Release\net10.0\wwwroot\_framework\icudt_CJK.tjcz0u77k5.dat
 C:\Users\takut\OneDrive\デスクトップ\WebExacise\src\csharp\BlazorSample\bin\Release\net10.0\wwwroot\_framework\icudt_EFIGS.tptq2av103.dat
 C:\Users\takut\OneDrive\デスクトップ\WebExacise\src\csharp\BlazorSample\bin\Release\net10.0\wwwroot\_framework\icudt_no_CJK.lfu7j35m59.dat
+C:\Users\takut\OneDrive\デスクトップ\WebExacise\src\csharp\BlazorSample\bin\Release\net10.0\wwwroot\_framework\BlazorSample.a4zpmig2j8.wasm
+C:\Users\takut\OneDrive\デスクトップ\WebExacise\src\csharp\BlazorSample\bin\Release\net10.0\wwwroot\_framework\BlazorSample.wfa2uii8x8.pdb
+C:\Users\takut\OneDrive\デスクトップ\WebExacise\src\csharp\BlazorSample\bin\Release\net10.0\wwwroot\_framework\dotnet.j5wr5ld4yg.js
 C:\Users\takut\OneDrive\デスクトップ\WebExacise\src\csharp\BlazorSample\bin\Release\net10.0\wwwroot\_framework\blazor.webassembly.66stpp682q.js.gz
 C:\Users\takut\OneDrive\デスクトップ\WebExacise\src\csharp\BlazorSample\bin\Release\net10.0\wwwroot\_framework\Microsoft.AspNetCore.Authorization.mrojqw2yhh.wasm.gz
 C:\Users\takut\OneDrive\デスクトップ\WebExacise\src\csharp\BlazorSample\bin\Release\net10.0\wwwroot\_framework\Microsoft.AspNetCore.Components.5yorhp2rya.wasm.gz
@@ -413,6 +416,9 @@ C:\Users\takut\OneDrive\デスクトップ\WebExacise\src\csharp\BlazorSample\bi
 C:\Users\takut\OneDrive\デスクトップ\WebExacise\src\csharp\BlazorSample\bin\Release\net10.0\wwwroot\_framework\icudt_CJK.tjcz0u77k5.dat.gz
 C:\Users\takut\OneDrive\デスクトップ\WebExacise\src\csharp\BlazorSample\bin\Release\net10.0\wwwroot\_framework\icudt_EFIGS.tptq2av103.dat.gz
 C:\Users\takut\OneDrive\デスクトップ\WebExacise\src\csharp\BlazorSample\bin\Release\net10.0\wwwroot\_framework\icudt_no_CJK.lfu7j35m59.dat.gz
+C:\Users\takut\OneDrive\デスクトップ\WebExacise\src\csharp\BlazorSample\bin\Release\net10.0\wwwroot\_framework\BlazorSample.a4zpmig2j8.wasm.gz
+C:\Users\takut\OneDrive\デスクトップ\WebExacise\src\csharp\BlazorSample\bin\Release\net10.0\wwwroot\_framework\BlazorSample.wfa2uii8x8.pdb.gz
+C:\Users\takut\OneDrive\デスクトップ\WebExacise\src\csharp\BlazorSample\bin\Release\net10.0\wwwroot\_framework\dotnet.j5wr5ld4yg.js.gz
 C:\Users\takut\OneDrive\デスクトップ\WebExacise\src\csharp\BlazorSample\bin\Release\net10.0\BlazorSample.staticwebassets.runtime.json
 C:\Users\takut\OneDrive\デスクトップ\WebExacise\src\csharp\BlazorSample\bin\Release\net10.0\BlazorSample.staticwebassets.endpoints.json
 C:\Users\takut\OneDrive\デスクトップ\WebExacise\src\csharp\BlazorSample\bin\Release\net10.0\BlazorSample.dll
@@ -1099,6 +1105,10 @@ C:\Users\takut\OneDrive\デスクトップ\WebExacise\src\csharp\BlazorSample\ob
 C:\Users\takut\OneDrive\デスクトップ\WebExacise\src\csharp\BlazorSample\obj\Release\net10.0\compressed\wcybzhqvle-{0}-tjcz0u77k5-tjcz0u77k5.gz
 C:\Users\takut\OneDrive\デスクトップ\WebExacise\src\csharp\BlazorSample\obj\Release\net10.0\compressed\upxmb5fhul-{0}-tptq2av103-tptq2av103.gz
 C:\Users\takut\OneDrive\デスクトップ\WebExacise\src\csharp\BlazorSample\obj\Release\net10.0\compressed\fxvu2gwzn2-{0}-lfu7j35m59-lfu7j35m59.gz
+C:\Users\takut\OneDrive\デスクトップ\WebExacise\src\csharp\BlazorSample\obj\Release\net10.0\compressed\v2e4z8oh0l-{0}-a4zpmig2j8-a4zpmig2j8.gz
+C:\Users\takut\OneDrive\デスクトップ\WebExacise\src\csharp\BlazorSample\obj\Release\net10.0\compressed\ueng6fqzzi-{0}-wfa2uii8x8-wfa2uii8x8.gz
+C:\Users\takut\OneDrive\デスクトップ\WebExacise\src\csharp\BlazorSample\obj\Release\net10.0\compressed\qmhx7n56vv-{0}-j5wr5ld4yg-j5wr5ld4yg.gz
+C:\Users\takut\OneDrive\デスクトップ\WebExacise\src\csharp\BlazorSample\obj\Release\net10.0\compressed\ukypc59bau-{0}-c11hmq2tww-c11hmq2tww.gz
 C:\Users\takut\OneDrive\デスクトップ\WebExacise\src\csharp\BlazorSample\obj\Release\net10.0\staticwebassets.build.json
 C:\Users\takut\OneDrive\デスクトップ\WebExacise\src\csharp\BlazorSample\obj\Release\net10.0\staticwebassets.build.json.cache
 C:\Users\takut\OneDrive\デスクトップ\WebExacise\src\csharp\BlazorSample\obj\Release\net10.0\staticwebassets.development.json
@@ -1109,13 +1119,3 @@ C:\Users\takut\OneDrive\デスクトップ\WebExacise\src\csharp\BlazorSample\ob
 C:\Users\takut\OneDrive\デスクトップ\WebExacise\src\csharp\BlazorSample\obj\Release\net10.0\refint\BlazorSample.dll
 C:\Users\takut\OneDrive\デスクトップ\WebExacise\src\csharp\BlazorSample\obj\Release\net10.0\BlazorSample.pdb
 C:\Users\takut\OneDrive\デスクトップ\WebExacise\src\csharp\BlazorSample\obj\Release\net10.0\ref\BlazorSample.dll
-C:\Users\takut\OneDrive\デスクトップ\WebExacise\src\csharp\BlazorSample\bin\Release\net10.0\wwwroot\_framework\BlazorSample.kag6kj95yu.wasm
-C:\Users\takut\OneDrive\デスクトップ\WebExacise\src\csharp\BlazorSample\bin\Release\net10.0\wwwroot\_framework\BlazorSample.msy4uqq572.pdb
-C:\Users\takut\OneDrive\デスクトップ\WebExacise\src\csharp\BlazorSample\bin\Release\net10.0\wwwroot\_framework\dotnet.w1fqekn68t.js
-C:\Users\takut\OneDrive\デスクトップ\WebExacise\src\csharp\BlazorSample\bin\Release\net10.0\wwwroot\_framework\BlazorSample.kag6kj95yu.wasm.gz
-C:\Users\takut\OneDrive\デスクトップ\WebExacise\src\csharp\BlazorSample\bin\Release\net10.0\wwwroot\_framework\BlazorSample.msy4uqq572.pdb.gz
-C:\Users\takut\OneDrive\デスクトップ\WebExacise\src\csharp\BlazorSample\bin\Release\net10.0\wwwroot\_framework\dotnet.w1fqekn68t.js.gz
-C:\Users\takut\OneDrive\デスクトップ\WebExacise\src\csharp\BlazorSample\obj\Release\net10.0\compressed\v2e4z8oh0l-{0}-kag6kj95yu-kag6kj95yu.gz
-C:\Users\takut\OneDrive\デスクトップ\WebExacise\src\csharp\BlazorSample\obj\Release\net10.0\compressed\ueng6fqzzi-{0}-msy4uqq572-msy4uqq572.gz
-C:\Users\takut\OneDrive\デスクトップ\WebExacise\src\csharp\BlazorSample\obj\Release\net10.0\compressed\qmhx7n56vv-{0}-w1fqekn68t-w1fqekn68t.gz
-C:\Users\takut\OneDrive\デスクトップ\WebExacise\src\csharp\BlazorSample\obj\Release\net10.0\compressed\ukypc59bau-{0}-spbn0pigmh-spbn0pigmh.gz
