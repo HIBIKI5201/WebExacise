@@ -6,39 +6,37 @@ if (Test-Path -Path "docs") {
     Remove-Item -Path "docs" -Recurse -Force
 }
 
-Write-Host "Blazorアプリの公開を開始します..." -ForegroundColor Cyan
+Write-Host "WasmLogicアプリの公開を開始します..." -ForegroundColor Cyan
 
 # クリーンビルドを実行
 Write-Host "プロジェクトのクリーンアップを実行します..." -ForegroundColor Yellow
-dotnet clean src/csharp/BlazorSample/BlazorSample.csproj -c Release --nologo
+dotnet clean src/csharp/WasmLogic/WasmLogic.csproj -c Release --nologo
 
-# dotnet publish コマンドを実行
-dotnet publish src/csharp/BlazorSample/BlazorSample.csproj -c Release -o docs --nologo
+# dotnet publish コマンドを実行 (WasmLogicプロジェクト用)
+# EmitWebAssemblyAssetsToSeparatePath=false のため、Wasm関連ファイルはdocs直下に出力される
+dotnet publish src/csharp/WasmLogic/WasmLogic.csproj -c Release -o docs --nologo
 
 if ($LASTEXITCODE -eq 0) {
-    Write-Host "Blazorアプリの公開が成功しました！" -ForegroundColor Green
-    Write-Host "docsフォルダにファイルが出力されました。" -ForegroundColor Green
+    Write-Host "WasmLogicアプリの公開が成功しました！" -ForegroundColor Green
+    Write-Host "docsフォルダにWebAssemblyファイルが出力されました。" -ForegroundColor Green
 
-    # index.htmlのベースパスをリポジトリ名に合わせて修正
+    # src/html-css-js の内容を docs フォルダにコピー
+    Write-Host "静的コンテンツ (HTML/CSS/JS) を docs フォルダにコピーします..." -ForegroundColor Yellow
+    Copy-Item -Path "src/html-css-js/*" -Destination "docs/" -Recurse -Force
+
+    # docs/index.htmlのベースパスをリポジトリ名に合わせて修正
     $repoName = "WebExacise" # ユーザーのリポジトリ名
-    $indexPath = "docs/wwwroot/index.html"
-    Write-Host "index.html の <base href> を '/$repoName/' に修正します..." -ForegroundColor Yellow
+    $indexPath = "docs/index.html" # docs直下にあるindex.htmlを修正
+    Write-Host "$indexPath の <base href> を '/$repoName/' に修正します..." -ForegroundColor Yellow
     (Get-Content $indexPath) -replace '<base href="/" />', "<base href='/$repoName/' />" | Set-Content $indexPath
 
-    # GitHub Pagesのルーティング設定のため、index.htmlを404.htmlとしてコピー
-    Write-Host "GitHub Pagesルーティング設定のため、index.htmlを404.htmlとしてコピーします..." -ForegroundColor Yellow
-    Copy-Item -Path "docs/wwwroot/index.html" -Destination "docs/wwwroot/404.html" -Force
+    # GitHub Pagesのルーティング設定のため、docs/index.htmlをdocs/404.htmlとしてコピー
+    Write-Host "GitHub Pagesルーティング設定のため、$indexPathをdocs/404.htmlとしてコピーします..." -ForegroundColor Yellow
+    Copy-Item -Path $indexPath -Destination "docs/404.html" -Force
 
-    # wwwrootフォルダの中身をdocs直下に移動
-    Write-Host "docs/wwwroot の内容を docs/ 直下に移動します..." -ForegroundColor Yellow
-    Get-ChildItem -Path "docs/wwwroot" -File -Force | Move-Item -Destination "docs/" -Force
-    Get-ChildItem -Path "docs/wwwroot" -Directory -Force | Move-Item -Destination "docs/" -Force
+    # WasmLogicプロジェクトではwwwrootは生成されないため、wwwrootフォルダの移動/削除は不要
 
-    # 空になったwwwrootフォルダを削除
-    Write-Host "空になった docs/wwwroot フォルダを削除します..." -ForegroundColor Yellow
-    Remove-Item -Path "docs/wwwroot" -Recurse -Force
-    
-    # GitHub Pagesでは不要なweb.configを削除
+    # GitHub Pagesでは不要なweb.configを削除 (dotnet publishが生成する可能性があるので念のため)
     Write-Host "不要な web.config ファイルを削除します..." -ForegroundColor Yellow
     if (Test-Path -Path "docs/web.config") {
         Remove-Item -Path "docs/web.config" -Force
@@ -50,9 +48,8 @@ if ($LASTEXITCODE -eq 0) {
 
     Write-Host "GitHub Pages公開用のファイル配置が完了しました！" -ForegroundColor Green
 } else {
-    Write-Host "Blazorアプリの公開に失敗しました。" -ForegroundColor Red
+    Write-Host "WasmLogicアプリの公開に失敗しました。" -ForegroundColor Red
     Write-Host "エラーコード: $LASTEXITCODE" -ForegroundColor Red
 }
 
-# 実行結果を確認できるように一時停止
 Read-Host "続行するには何かキーを押してください..."
